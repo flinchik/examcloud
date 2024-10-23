@@ -3,7 +3,8 @@ services:
   web:
     build: .
     ports:
-      - "80:80"
+      - "5000:5000"
+    command: sh -c "service nginx start && python web-app-code.py"
     restart: always
     depends_on:
       - flask-app
