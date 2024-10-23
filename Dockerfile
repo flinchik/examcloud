@@ -21,8 +21,8 @@ RUN ln -s /etc/nginx/sites-available/flask-app /etc/nginx/sites-enabled/
 # Удаляем дефолтный сайт
 RUN rm /etc/nginx/sites-enabled/default
 
-# Настраиваем запуск Nginx и Flask
+# Запускаем Nginx и Flask на порту 5000
 CMD service nginx start && python web-app-code.py
 
-# Открываем порт 80 для веб-трафика
-EXPOSE 80
+# Открываем порт 5000 для Flask
+EXPOSE 5000
