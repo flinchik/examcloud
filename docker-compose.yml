@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    restart: always
+    depends_on:
+      - flask-app
+
+  flask-app:
+    build: .
+    command: python web-app-code.py
+    volumes:
+      - .:/app
+    expose:
+      - "5000"
